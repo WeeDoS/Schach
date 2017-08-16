@@ -31,7 +31,7 @@ public class Board extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        Spielen = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -74,14 +74,14 @@ public class Board extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2);
 
-        jButton2.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jButton2.setText("Spielen");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Spielen.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
+        Spielen.setText("Spielen");
+        Spielen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SpielenActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
+        jPanel1.add(Spielen);
 
         jButton4.setText("jButton4");
         jPanel1.add(jButton4);
@@ -110,9 +110,9 @@ public class Board extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void SpielenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpielenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_SpielenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,8 +151,8 @@ public class Board extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Spielen;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

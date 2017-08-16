@@ -3,7 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+
 package GUI;
+
+import root.*;
+import java.awt.Color;
 
 /**
  *
@@ -16,6 +22,40 @@ public class Brett extends javax.swing.JFrame {
      */
     public Brett() {
         initComponents();
+        
+        getContentPane().removeAll();
+        
+        boolean schwarz = true;
+        for (int z = 0; z<feld.length; z++ ) {
+            for (int sp = 0; sp<feld[z].length; sp++ ) {
+            Feld f = new Feld ( this, schwarz );
+            feld [z][sp]=f;
+            f.addActionListener(fl);
+            f.setBackground(schwarz ? Color.darkGray : Color.lightGray);
+            
+            if ( schwarz ) {
+                if ( z <= 3) {
+                    new Einfach ( f, false );
+                    f.setStein ( new Einfach ( f, false ));
+                    f.setForeground ( Color.white );
+                    f.setText("O");
+                }    else if ( z >= 6) {
+                    new Einfach ( f, true );
+                    f.setStein ( new Einfach ( f, true ));
+                    f.setForeground ( Color.black );
+                    f.setText("O");
+                            
+                            }
+                
+            }
+            
+            jPanel1.add(f);
+            schwarz = !schwarz;
+            }
+          schwarz = !schwarz;  
+        }
+        
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
     }
 
     /**
@@ -27,18 +67,12 @@ public class Brett extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jPanel1.setLayout(new java.awt.GridLayout(8, 8));
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,6 +112,26 @@ public class Brett extends javax.swing.JFrame {
         });
     }
 
+    private Feld [][] feld = new Feld [8][8];
+            
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+}
+
+private class FeldListener implements java.awt.event.ActionListener {
+    public void actionPerformed ( java.awt.event.ActionEvent evt ) {
+        
+        for ( int z = 0; z<feld.length; z++ ) {
+            for ( int sp = 0; sp<feld.length; sp++ ) {
+                if ( evt.getSource() == feld[z][sp]) {
+                    System.out.println( "Feld "+ z + ", "+ sp + " geklickt!");
+                }
+            }
+        
+     
+        }
+    }
+
+} FeldListener fl = new FeldListener();
 }
