@@ -70,6 +70,7 @@ public class Brett extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setLayout(new java.awt.GridLayout(8, 8));
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -117,7 +118,7 @@ public class Brett extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-}
+
 
 private class FeldListener implements java.awt.event.ActionListener {
     public void actionPerformed ( java.awt.event.ActionEvent evt ) {
