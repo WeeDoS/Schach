@@ -73,7 +73,8 @@ public class Board extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2);
 
-        jButton2.setText("jButton1");
+        jButton2.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
+        jButton2.setText("Spielen");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
