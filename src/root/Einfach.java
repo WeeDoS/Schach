@@ -13,9 +13,9 @@ import GUI.*;
  */
 public class Einfach extends Stein {
     
-    public Einfach ( Feld feld, boolean istSchwarz ) {
+    public Einfach ( Feld feld ) {
         
-        super ( feld , istSchwarz);
+        super ( feld );
     }
     
 }

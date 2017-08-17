@@ -15,11 +15,10 @@ public class Feld extends javax.swing.JButton {
 
 private Brett brett;
 private Stein stein = null;
-private boolean istSchwarz;
 
-public Feld ( Brett brett , boolean schwarz ){
+
+public Feld ( Brett brett){
     this.brett=brett;
-    istSchwarz = schwarz;
     
 }
 

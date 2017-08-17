@@ -19,14 +19,27 @@ public class Brett extends GameWindow {
         
         getContentPane().removeAll();
         
-        boolean schwarz = true;
+        boolean schwarz = false;
         for (int z = 0; z<feld.length; z++ ) {
             for (int sp = 0; sp<feld[z].length; sp++ ) {
-            Feld f = new Feld ( this, schwarz );
+            Feld f = new Feld ( this );
             feld [z][sp]=f;
             f.addActionListener(fl);
-            f.setBackground(schwarz ? Color.darkGray : Color.lightGray);
+            f.setBackground(schwarz ? Color.green : Color.white);  //Farbe ist änderbar
             
+                if ( z == 1) {
+                    new Einfach ( f );
+                    f.setStein ( new Einfach ( f ));
+                    f.setForeground ( Color.blue ); //Farbe ist änderbar
+                    f.setText("O");
+                }    else if ( z == 6) {
+                    new Einfach ( f );
+                    f.setStein ( new Einfach ( f ));
+                    f.setForeground ( Color.black ); //Farbe ist änderbar
+                    f.setText("O");
+                            
+                            }
+                
             
             
             jPanel1.add(f);

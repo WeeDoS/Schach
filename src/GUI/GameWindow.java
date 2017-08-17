@@ -28,7 +28,7 @@ pack();
 
 setTitle("Chess with Dices");
 setLocation(10, 10);
-setResizable(false);
+setResizable(true);
 
 setVisible(true);
 }
